@@ -19,9 +19,21 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<script>
+			const toggleThemeBtn = document.getElementById('toggleThemeBtn');
+		
+			function toggleTheme() {
+			  const body = document.querySelector('body');
+			  body.classList.toggle('dark');
+			}
+		
+			toggleThemeBtn.addEventListener('click', toggleTheme);
+		  </script>
+
 	</head>
-	<body>
-		<div class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#3b0252_100%)]"></div>
+	<body class="dark">
+		<div class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#3b0252_100%)] [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#F0D3FC_100%)]"></div>
 		<Header />
 		<slot />
 	</body>

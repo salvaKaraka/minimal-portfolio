@@ -9,22 +9,22 @@ import NetworkIcon from "../icons/Network.astro";
 const TAGS = {
     HTML: {
         name: "HTML",
-        class: "bg-red-500/20 text-white",
+        class: "bg-red-500/70 dark:bg-red-500/20 text-white",
         icon: HTMLIcon,
     },
     CSS: {
         name: "CSS",
-        class: "bg-blue-500/20 text-white",
+        class: "bg-blue-500/70 dark:bg-blue-500/20 text-white",
         icon: CSSIcon,
     },
     JavaScript: {
         name: "JavaScript",
-        class: "bg-yellow-500/20 text-white",
+        class: "bg-yellow-500/70 dark:bg-yellow-500/20 text-white",
         icon: JavaScriptIcon,
     },
     PHP: {
         name: "PHP",
-        class: "bg-purple-500/20 text-white",
+        class: "bg-purple-500/70 dark:bg-purple-500/20 text-white",
         icon:PHPIcon,
     },
 };
@@ -49,12 +49,12 @@ const PROJECTS = [
             <h3 class="text-2xl font-semibold text-purple-400/90 mb-2">
                 {title}
             </h3>
-            <p class="text-lg text-pretty">{description}</p>
+            <p class="text-lg text-pretty mb-3">{description}</p>
 
-            <ul class="flex flex-wrap my-4">
+            <ul class="flex flex-wrap">
                 {tags.map((tag) => (
                     <li>
-                        <span class={`font-semibold flex flex-row gap-x-2 rounded px-3 py-2 items-center mr-4 mb-2 text-xs ${tag.class}`}>
+                        <span class={`font-semibold flex flex-row gap-x-2 rounded px-3 py-2 items-center mr-4 mb-4 text-xs ${tag.class}`}>
                             <tag.icon class="size-4"/>
                             {tag.name}
                         </span>
@@ -63,21 +63,20 @@ const PROJECTS = [
             </ul>
 
             <img
-                class="rounded shadow-2xl shadow-white/10 my-4"
+                class="rounded shadow-2xl shadow-white/10 mb-4 mt-1"
                 src={image}
                 alt={alt}
             />
 
             <div class="flex flex-row gap-x-4">
                 <a
-                    class="bg-white/10 
-    border border-white/5
+                    class="border border-black/10 bg-black/5 hover:bg-black/10 dark:border-white/5 dark:bg-white/10 dark:hover:bg-white/30
     rounded-full
     inline-flex justify-center items-center gap-x-2
     py-1 px-2 md:py-2 md:px-4
     text-xs md:text-base
     transition
-    hover:scale-110 hover:bg-white/30"
+    hover:scale-110"
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -87,14 +86,13 @@ const PROJECTS = [
                 </a>
 
                 <a
-                    class="bg-white/10 
-    border border-white/5
+                    class="border border-black/10 bg-black/5 hover:bg-black/10 dark:border-white/5 dark:bg-white/10 dark:hover:bg-white/30
     rounded-full
     inline-flex justify-center items-center gap-x-2
     py-1 px-2 md:py-2 md:px-4
     text-xs md:text-base
     transition
-    hover:scale-110 hover:bg-white/30"
+    hover:scale-110"
                     href={github}
                     target="_blank"
                     rel="noopener noreferrer"
