@@ -1,0 +1,110 @@
+---
+import HTMLIcon from "../icons/HTML.astro"
+import CSSIcon from "../icons/CSS.astro"
+import JavaScriptIcon from "../icons/JavaScript.astro"
+import PHPIcon from "../icons/PHP.astro"
+import GitHubIcon from "../icons/GitHub.astro";
+import NetworkIcon from "../icons/Network.astro";
+
+const TAGS = {
+    HTML: {
+        name: "HTML",
+        class: "bg-red-500/20 text-white",
+        icon: HTMLIcon,
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-blue-500/20 text-white",
+        icon: CSSIcon,
+    },
+    JavaScript: {
+        name: "JavaScript",
+        class: "bg-yellow-500/20 text-white",
+        icon: JavaScriptIcon,
+    },
+    PHP: {
+        name: "PHP",
+        class: "bg-purple-500/20 text-white",
+        icon:PHPIcon,
+    },
+};
+
+const PROJECTS = [
+    {
+        title: "City Bell Verde - Alquiler de Cabañas",
+        description:
+            "Creado desde cero utilizando únicamente HTML, CSS, JavaScript y PHP. Con un SEO optimizado y un buen rendimiento.",
+        link: "https://citybellverde.com",
+        github: "https://github.com/salvaKaraka/CityBellVerde",
+        image: "/projects/citybellverde.webp",
+        alt: "captura de pantalla del sitio citybellverde.com",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript, TAGS.PHP],
+    },
+];
+---
+
+{
+    PROJECTS.map(({ image, title, description, tags, alt, link, github }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-purple-400/90 mb-2">
+                {title}
+            </h3>
+            <p class="text-lg text-pretty">{description}</p>
+
+            <ul class="flex flex-wrap my-4">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`font-semibold flex flex-row gap-x-2 rounded px-3 py-2 items-center mr-4 text-xs ${tag.class}`}>
+                            <tag.icon class="size-4"/>
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+
+            <img
+                class="rounded shadow-2xl shadow-white/10 my-4"
+                src={image}
+                alt={alt}
+            />
+
+            <div class="flex flex-row gap-x-4">
+                <a
+                    class="bg-white/10 
+    border border-white/5
+    rounded-full
+    inline-flex justify-center items-center gap-x-2
+    py-1 px-2 md:py-2 md:px-4
+    text-xs md:text-base
+    transition
+    hover:scale-110 hover:bg-white/30"
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <NetworkIcon class="size-6"/>
+                    <span>Visitar</span>
+                </a>
+
+                <a
+                    class="bg-white/10 
+    border border-white/5
+    rounded-full
+    inline-flex justify-center items-center gap-x-2
+    py-1 px-2 md:py-2 md:px-4
+    text-xs md:text-base
+    transition
+    hover:scale-110 hover:bg-white/30"
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <GitHubIcon class="size-6"/>
+                    <span>Ver código</span>
+                </a>
+            </div>
+
+
+        </article>
+    ))
+}

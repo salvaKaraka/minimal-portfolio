@@ -1,0 +1,32 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+    {
+        title: 'Soporte IT - Facultad de Ingenieria, Universidad Nacional de la Plata',
+        date: '2022 - Ahora',
+        description: 'Ofrezco soporte técnico a todo el área administrativa y docente de la facultad. Me encargo de implementar, mantener y configurar redes telefónicas y de internet con más de 2000 dispositivos. Además reparo computadoras y dispositivos electrónicos. Cada problema es único, lo que exige improvisar y aprender sobre la marcha, siempre manteniendo un enfoque profesional.',
+    },
+    {
+        title: 'Profesor Particular',
+        date: '2021 - Ahora',
+        description: 'Doy clases particulares a estudiantes de diversos niveles académicos, con especialización en matemáticas, inglés y ciencias de la computación. Esta experiencia me permitió mejorar en gran medida mis habilidades de comunicación y enseñanza.',
+    },
+    {
+        title: 'Desarrollo Web',
+        date: '2016 - Ahora',
+        description: 'Diseño y desarrollo aplicaciones web, pueden ver algunos ejemplos en mi GitHub o en la seccion de proyectos.',
+        link: "#proyectos"
+    }
+] 
+---
+
+<ol class="relative border-s border-gray-200 ml-3">                  
+    
+    {EXPERIENCE.map(experience => (
+        <li class="mb-10 ms-4">
+            <ExperienceItem {...experience}/>    
+        </li>
+    ))}
+
+</ol>
+
