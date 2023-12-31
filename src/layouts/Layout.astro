@@ -25,10 +25,10 @@ const { title, description } = Astro.props;
 		
 			function toggleTheme() {
 			  const body = document.querySelector('body');
-			  body.classList.toggle('dark');
+			  body!.classList.toggle('dark');
 			}
 		
-			toggleThemeBtn.addEventListener('click', toggleTheme);
+			toggleThemeBtn!.addEventListener('click', toggleTheme);
 		  </script>
 
 	</head>
