@@ -1,6 +1,6 @@
 ---
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro"
+import Footer from "../components/Footer.astro";
 import "@fontsource-variable/onest";
 interface Props {
 	title: string;
@@ -21,19 +21,32 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 
 		<script>
-			const toggleThemeBtn = document.getElementById('toggleThemeBtn');
-		
-			function toggleTheme() {
-			  const body = document.querySelector('body');
-			  body!.classList.toggle('dark');
-			}
-		
-			toggleThemeBtn!.addEventListener('click', toggleTheme);
-		  </script>
+			const toggleThemeBtn = document.getElementById("toggleThemeBtn");
 
+			function toggleTheme() {
+				const body = document.querySelector("body");
+				body!.classList.toggle("dark");
+			}
+
+			toggleThemeBtn!.addEventListener("click", toggleTheme);
+		</script>
+
+		<!--script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const toggleBtn = document.getElementById("toggleLangBtn");
+
+				toggleBtn!.addEventListener("click", function () {
+					const languageSpan = toggleBtn!.querySelector('span');
+        			languageSpan!.textContent = (languageSpan!.textContent === 'es') ? 'en' : 'es';
+					});
+				});
+		</script-->
 	</head>
 	<body class="dark">
-		<div class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#3b0252_100%)] [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#F0D3FC_100%)]"></div>
+		<div
+			class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#3b0252_100%)] [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#F0D3FC_100%)]"
+		>
+		</div>
 		<Header />
 		<slot />
 	</body>
@@ -56,8 +69,8 @@ const { title, description } = Astro.props;
 		min-height: 100vh;
 	}
 
-	@media (prefers-reduced-motion: reduce){
-		html{
+	@media (prefers-reduced-motion: reduce) {
+		html {
 			scroll-behavior: auto;
 		}
 	}
