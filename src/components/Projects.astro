@@ -8,6 +8,9 @@ import NetworkIcon from "../icons/Network.astro";
 import PythonIcon from "../icons/Python.astro";
 import NextIcon from "../icons/Next.astro";
 import TailwindIcon from "../icons/Tailwind.astro";
+import ReactIcon from "../icons/React.astro";
+import TypeScriptIcon from "../icons/TypeScript.astro";
+
 
 const TAGS = {
     HTML: {
@@ -37,23 +40,23 @@ const TAGS = {
     },
     Next: {
         name: "Next.js",
-        class: "bg-black-500/90 dark:bg-black-500/20 text-white",
+        class: "bg-gray-500/90 dark:bg-gray-500/20 text-white",
         icon: NextIcon,
     },
     Tailwind: {
-        name: "Tailwind",
+        name: "Tailwind CSS",
         class: "bg-teal-500/90 dark:bg-teal-500/20 text-white",
         icon: TailwindIcon,
     },
-    Typescript: {
-        name: "Typescript",
+    TypeScript: {
+        name: "TypeScript",
         class: "bg-indigo-500/90 dark:bg-indigo-500/20 text-white",
-        icon: TailwindIcon,
+        icon: TypeScriptIcon,
     },
     React: {
         name: "React",
         class: "bg-cyan-500/90 dark:bg-cyan-500/20 text-white",
-        icon: TailwindIcon,
+        icon: ReactIcon,
     },
 };
 
@@ -85,7 +88,7 @@ const PROJECTS = [
         github: "https://github.com/salvaKaraka/cohere-chatbot",
         image: "/projects/cohere-chatbot.webp",
         alt: "captura de pantalla de la pagina del chatbot",
-        tags: [TAGS.React, TAGS.Next, TAGS.Tailwind, TAGS.Typescript],
+        tags: [TAGS.Next, TAGS.React, TAGS.TypeScript, TAGS.Tailwind, ],
     },
 ];
 ---
