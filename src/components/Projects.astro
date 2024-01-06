@@ -6,6 +6,8 @@ import PHPIcon from "../icons/PHP.astro";
 import GitHubIcon from "../icons/GitHub.astro";
 import NetworkIcon from "../icons/Network.astro";
 import PythonIcon from "../icons/Python.astro";
+import NextIcon from "../icons/Next.astro";
+import TailwindIcon from "../icons/Tailwind.astro";
 
 const TAGS = {
     HTML: {
@@ -28,10 +30,30 @@ const TAGS = {
         class: "bg-purple-500/70 dark:bg-purple-500/20 text-white",
         icon: PHPIcon,
     },
-    PYTHON: {
+    Python: {
         name: "Python",
         class: "bg-blue-500/90 dark:bg-blue-500/20 text-white",
         icon: PythonIcon,
+    },
+    Next: {
+        name: "Next.js",
+        class: "bg-black-500/90 dark:bg-black-500/20 text-white",
+        icon: NextIcon,
+    },
+    Tailwind: {
+        name: "Tailwind",
+        class: "bg-teal-500/90 dark:bg-teal-500/20 text-white",
+        icon: TailwindIcon,
+    },
+    Typescript: {
+        name: "Typescript",
+        class: "bg-indigo-500/90 dark:bg-indigo-500/20 text-white",
+        icon: TailwindIcon,
+    },
+    React: {
+        name: "React",
+        class: "bg-cyan-500/90 dark:bg-cyan-500/20 text-white",
+        icon: TailwindIcon,
     },
 };
 
@@ -53,7 +75,7 @@ const PROJECTS = [
         github: "https://github.com/salvaKaraka/Background_Notes",
         image: "/projects/Background-Notes.webp",
         alt: "captura de pantalla de la aplicacion Background Notes",
-        tags: [TAGS.PYTHON],
+        tags: [TAGS.Python],
     },
     {
         title: "Chatbot - Habla conmigo",
@@ -63,7 +85,7 @@ const PROJECTS = [
         github: "https://github.com/salvaKaraka/cohere-chatbot",
         image: "/projects/cohere-chatbot.webp",
         alt: "captura de pantalla de la pagina del chatbot",
-        tags: [TAGS.PYTHON],
+        tags: [TAGS.React, TAGS.Next, TAGS.Tailwind, TAGS.Typescript],
     },
 ];
 ---
